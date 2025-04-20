@@ -5,9 +5,22 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+// hyper and meh key def
+#define LHYP LS(LC(LA(LGUI)))
+#define LHYPK(key) LS(LC(LA(LG(key))))
+
+#define LMEH LS(LC(LALT))
+#define LMEHK(key) LS(LC(LA(key)))
+
+#define RHYP RS(RC(RA(RGUI)))
+#define RHYPK(key) RS(RC(RA(RG(key))))
+
+#define RMEH RS(RC(RALT))
+#define RMEHK(key) RS(RC(RA(key)))
+
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+#define HRML(k1,k2,k3,k4,k5) &ht LGUI  k1  &ht LALT  k2  &ht LSHFT k3 &ht LCTRL k4 &ht LHYP k5 
+#define HRMR(k1,k2,k3,k4,k5) &ht RHYP  k1  &ht RCTRL k1  &ht RSHFT k3 &ht RALT  k4 &ht RGUI k5 
 
 / {
     behaviors {
@@ -39,7 +52,7 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
+            HRML(A,        S,         D,         F,     G)              HRMR(H,       J,        K,         L,        SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
