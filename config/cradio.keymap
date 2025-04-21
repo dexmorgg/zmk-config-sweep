@@ -21,7 +21,7 @@
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4,k5) &ht LGUI  k1  &ht LALT  k2  &ht LSHFT k3 &ht LCTRL k4 &ht LHYP k5 
-#define HRMR(k1,k2,k3,k4,k5) &ht RHYP  k1  &ht RCTRL k1  &ht RSHFT k3 &ht RALT  k4 &ht RGUI k5 
+#define HRMR(k1,k2,k3,k4,k5) &ht RHYP  k1  &ht RCTRL k2  &ht RSHFT k3 &ht RALT  k4 &ht RGUI k5 
 
 / {
     behaviors {
@@ -71,7 +71,7 @@
             HRML(A,        S,         D,         F,     G)              HRMR(H,       J,        K,         L,        SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+            &kp Z      &kp X      &kp C      &ht LMEH V  &kp B          &ht RMEH N &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &lt 1 TAB   &kp ENTER     &kp SPACE  &lt 2 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -105,7 +105,7 @@
             &kp GRAVE &kp TILDE  &kp LBRC   &kp LBKT   &kp LPAR        &kp RPAR    &kp RBKT   &kp RBRC   &kp DQT    &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │    =     │     +    │   │  -       │  _       │  \       │  │       │          │
-            &trans     &trans     &trans     &kp EQUAL  &kp PLUS      &kp MINUS  &kp UNDER  &kp BSLH   &kp PIPE   &trans
+           &kp LG(LS(C)) &kp LG(LS(N4)) &trans &kp EQUAL  &kp PLUS      &kp MINUS  &kp UNDER  &kp BSLH   &kp PIPE   &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
