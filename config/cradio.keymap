@@ -61,9 +61,13 @@
         tmux_prefix: tmux_prefix {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tap &kp A>
-                     , <&macro_release &kp LCTRL>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp A>,
+                <&macro_release>,
+                <&kp LCTRL>;
         };
 
         key: key {
@@ -130,6 +134,11 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <30 31>;
         };
+
+        fj_ctrla {
+            bindings = <&tmux_prefix>;
+            key-positions = <13 16>;
+        };
     };
 
     keymap {
@@ -164,9 +173,9 @@
 
         tri_layer {
             bindings = <
-&sys_reset   &trans  &trans  &trans      &bt BT_SEL 0    &bt BT_SEL 3  &trans  &trans  &trans  &sys_reset
-&bootloader  &trans  &trans  &trans      &bt BT_SEL 1    &bt BT_SEL 4  &trans  &trans  &trans  &bootloader
-&trans       &trans  &trans  &bt BT_CLR  &bt BT_SEL 2    &trans        &trans  &trans  &trans  &trans
+&sys_reset   &trans  &trans  &trans      &bt BT_SEL 0    &bt BT_SEL 3  &trans      &trans  &trans  &sys_reset
+&bootloader  &trans  &trans  &trans      &bt BT_SEL 1    &bt BT_SEL 4  &trans      &trans  &trans  &bootloader
+&trans       &trans  &trans  &bt BT_CLR  &bt BT_SEL 2    &trans        &bt BT_CLR  &trans  &trans  &trans
                              &trans      &trans          &trans        &trans
             >;
         };
@@ -192,7 +201,7 @@
         shortcut_layer_2 {
             bindings = <
 &kp LC(F1)   &kp LA(F2)   &kp LC(F3)   &kp LC(F4)   &kp LC(F5)        &kp LC(F6)      &kp LC(F7)      &kp LC(F8)      &kp LC(F9)      &kp LC(F10)
-&kp LC(F11)  &kp LC(F12)  &kp LC(F13)  &kp LC(F14)  &kp LC(F15)       &kp LC(F16)     &kp LC(F17)     &kp LC(F18)     &kp LC(F19)     &kp LC(F20)
+&kp LC(F11)  &kp LC(F12)  &kp LC(F13)  &key         &kp LC(F15)       &kp LC(F16)     &key            &kp LC(F18)     &kp LC(F19)     &kp LC(F20)
 &kp LC(F21)  &kp LC(F22)  &kp LC(F23)  &kp LC(F24)  &kp LC(LS(F1))    &kp LC(LS(F2))  &kp LC(LS(F3))  &kp LC(LS(F4))  &kp LC(LS(F5))  &kp LC(LS(F6))
                                        &trans       &trans            &trans          &trans
             >;
