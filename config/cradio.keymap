@@ -55,6 +55,15 @@
             tapping-term-ms = <200>;
             bindings = <&kp FSLH>, <&tmux_prefix>;
         };
+
+        sticky_shift: sticky_shift {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_SHIFT";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            quick-release;
+            release-after-ms = <200>;
+        };
     };
 
     macros {
@@ -145,6 +154,11 @@
         fj_ctrla {
             bindings = <&tmux_prefix>;
             key-positions = <13 16>;
+        };
+
+        shift_dance {
+            bindings = <&sticky_shift LEFT_SHIFT>;
+            key-positions = <10 19>;
         };
     };
 
