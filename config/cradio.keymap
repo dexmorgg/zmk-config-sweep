@@ -76,6 +76,13 @@
             bindings = <&kp N4 &kp N2 &kp N2 &kp N4 &kp N2 &kp N2 &kp N6 &kp N9>;
             label = "KEY";
         };
+
+        aider_code: aider_code {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp C &kp O &kp D &kp E &kp SPACE &kp G &kp O &kp SPACE &kp A &kp H &kp E &kp A &kp D>;
+            label = "AIDER_CODE";
+        };
     };
 
     conditional_layers {
@@ -155,10 +162,10 @@
 
         num_layer {
             bindings = <
-&kp N1         &kp N2                &kp N3             &kp N4             &kp N5                          &kp N6                                &kp N7                 &kp N8                &kp N9                      &kp N0
-&hml LGUI A    &hml LALT LC(F1)      &hml LSHFT LC(F2)  &hml LCTRL LC(F3)  &hml LS(LC(LA(LGUI))) LC(F4)    &hmr LS(LC(LA(LEFT_GUI))) LEFT_ARROW  &hmr RCTRL DOWN_ARROW  &hmr RIGHT_SHIFT UP   &hmr RIGHT_ALT RIGHT_ARROW  &hmr RIGHT_GUI SEMI
-&kp LS(LG(C))  &kp LS(LG(NUMBER_4))  &kp N8             &kp N9             &kp N0                          &kp C_VOL_DN                          &kp C_BRIGHTNESS_DEC   &kp C_BRIGHTNESS_INC  &kp C_VOLUME_UP             &kp C_MUTE
-                                                        &trans             &trans                          &trans                                &trans
+&kp N1            &kp N2                   &kp N3             &kp N4         &kp N5                          &kp N6                                &kp N7                 &kp N8                &kp N9                      &kp N0
+&hml LGUI N4      &hml LALT LC(N5)         &hml LSHFT LC(N6)  &hml LCTRL N0  &hml LS(LC(LA(LGUI))) LC(F4)    &hmr LS(LC(LA(LEFT_GUI))) LEFT_ARROW  &hmr RCTRL DOWN_ARROW  &hmr RIGHT_SHIFT UP   &hmr RIGHT_ALT RIGHT_ARROW  &hmr RIGHT_GUI SEMI
+&ht LS(LG(C)) N7  &ht LS(LG(NUMBER_4)) N8  &kp N9             &kp LS(LG(C))  &kp LS(LG(NUMBER_4))            &kp C_VOL_DN                          &kp C_BRIGHTNESS_DEC   &kp C_BRIGHTNESS_INC  &kp C_VOLUME_UP             &kp C_MUTE
+                                                              &trans         &trans                          &aider_code                           &key
             >;
         };
 
