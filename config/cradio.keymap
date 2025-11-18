@@ -139,7 +139,7 @@
         };
 
         shortcut-layer {
-            bindings = <&tog 6>;
+            bindings = <&tog 4>;
             key-positions = <32 31>;
         };
 
@@ -207,7 +207,7 @@
 &kp Q         &kp W         &kp E         &kp R         &kp T                      &kp Y                    &kp U           &kp I         &kp O        &kp P
 &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &hml LS(LC(LA(LGUI))) G    &hmr RS(RC(RA(RGUI))) H  &hmr RCTRL J    &hmr RSHFT K  &hmr RALT L  &hmr RGUI SEMI
 &hml LG(Z) Z  &hml LG(X) X  &hml LG(C) C  &hml LG(V) V  &ht LS(LC(LALT)) B         &ht RS(RC(RALT)) N       &kp M           &kp COMMA     &kp DOT      &kp SLASH
-                                          &lt 1 TAB     &lt 4 ENTER                &lt 5 SPACE              &layer_del 2 0
+                                          &lt 1 TAB     &lt 4 ENTER                &lt 0 SPACE              &layer_del 2 0
             >;
         };
 
@@ -231,10 +231,10 @@
 
         tri_layer {
             bindings = <
-&sys_reset   &trans  &trans  &trans      &bt BT_SEL 0    &bt BT_SEL 3  &trans      &trans  &trans  &sys_reset
-&bootloader  &trans  &trans  &trans      &bt BT_SEL 1    &bt BT_SEL 4  &trans      &trans  &trans  &bootloader
-&trans       &trans  &trans  &bt BT_CLR  &bt BT_SEL 2    &trans        &bt BT_CLR  &trans  &trans  &trans
-                             &trans      &trans          &trans        &trans
+&sys_reset   &trans  &trans  &trans       &bt BT_SEL 0    &bt BT_SEL 3  &trans      &trans  &trans  &sys_reset
+&bootloader  &trans  &trans  &aider_code  &bt BT_SEL 1    &bt BT_SEL 4  &key        &trans  &trans  &bootloader
+&trans       &trans  &trans  &bt BT_CLR   &bt BT_SEL 2    &trans        &bt BT_CLR  &trans  &trans  &trans
+                             &trans       &trans          &trans        &trans
             >;
         };
 
@@ -244,24 +244,6 @@
 &ht LA(A) LS(A)      &ht LA(W) LA(S)                    &kp LA(D)                            &ht LA(V) LA(H)      &kp LG(G)              &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans
 &ht LG(LS(Z)) LG(Z)  &kp LG(X)                          &ht LA(LG(C)) LG(C)                  &ht LA(LG(V)) LG(V)  &ht LA(LC(T)) SPACE    &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans
                                                                                              &kp C_REPEAT         &trans                 &mkp MB1        &mkp MB2
-            >;
-        };
-
-        shortcut_layer {
-            bindings = <
-&kp LA(F1)   &kp LA(F2)   &kp LA(F3)   &kp LA(F4)   &kp LA(F5)        &kp LA(F6)      &kp LA(F7)      &kp LA(F8)      &kp LA(F9)      &kp LA(F10)
-&kp LA(F11)  &kp LA(F12)  &kp LA(F13)  &kp LA(F14)  &kp LA(F15)       &kp LA(F16)     &kp LA(F17)     &kp LA(F18)     &kp LA(F19)     &kp LA(F20)
-&kp LA(F21)  &kp LA(F22)  &kp LA(F23)  &kp LA(F24)  &kp LA(LS(F1))    &kp LA(LS(F2))  &kp LA(LS(F3))  &kp LA(LS(F4))  &kp LA(LS(F5))  &kp LA(LS(F6))
-                                       &trans       &trans            &trans          &trans
-            >;
-        };
-
-        shortcut_layer_2 {
-            bindings = <
-&kp LC(F1)   &kp LA(F2)   &kp LC(F3)   &kp LC(F4)   &kp LC(F5)        &kp LC(F6)      &kp LC(F7)      &kp LC(F8)      &kp LC(F9)      &kp LC(F10)
-&kp LC(F11)  &kp LC(F12)  &kp LC(F13)  &key         &kp LC(F15)       &kp LC(F16)     &key            &kp LC(F18)     &kp LC(F19)     &kp LC(F20)
-&kp LC(F21)  &kp LC(F22)  &kp LC(F23)  &kp LC(F24)  &kp LC(LS(F1))    &kp LC(LS(F2))  &kp LC(LS(F3))  &kp LC(LS(F4))  &kp LC(LS(F5))  &kp LC(LS(F6))
-                                       &trans       &trans            &trans          &trans
             >;
         };
     };
