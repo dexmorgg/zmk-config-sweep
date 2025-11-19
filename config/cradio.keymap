@@ -81,6 +81,15 @@
             tapping-term-ms = <150>;
             flavor = "balanced";
         };
+
+        stick_alt_com: stick_alt_com {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICK_ALT_COM";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <40>;
+            quick-release;
+        };
     };
 
     macros {
@@ -135,7 +144,7 @@
         };
 
         medialayer {
-            bindings = <&to 4>;
+            bindings = <&stick_alt_com LA(LEFT_COMMAND)>;
             key-positions = <0 1 2>;
             timeout-ms = <50>;
         };
